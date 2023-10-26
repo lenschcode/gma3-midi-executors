@@ -76,17 +76,32 @@ local function parseMidiRemotes()
     for key, remote in pairs(Root().ShowData.Remotes.MIDIRemotes:Children()) do
         local exec = checkExecutor(remote.name)
         if exec ~= nil then
-            remote.target = getExecObject(exec.page, exec.id)
+            if remote.target ~= getExecObject(exec.page, exec.id) then
+                remote.target = getExecObject(exec.page, exec.id)
+
+            end
             if remote.target == nil then
-                remote.key = ""
-                remote.fader = ""
+                if remote.key ~= "" then
+                    remote.key = ""
+                end
+                if remote.fader ~= "" then
+                    remote.fader = ""
+                end
             else
                 if exec.type == "Key" then
-                    remote.key = getExecKey(exec.page, exec.id)
-                    remote.fader = ""
+                    if remote.key ~= getExecKey(exec.page, exec.id) then
+                        remote.key = getExecKey(exec.page, exec.id)
+                    end
+                    if remote.fader ~= "" then
+                        remote.fader = ""
+                    end
                 else
-                    remote.key = ""
-                    remote.fader = getExecFader(exec.page, exec.id)
+                    if remote.key ~= "" then
+                        remote.key = ""
+                    end
+                    if remote.fader ~= getExecFader(exec.page, exec.id) then
+                        remote.fader = getExecFader(exec.page, exec.id)
+                    end
                 end
             end
         end
