@@ -16,7 +16,7 @@ Create the Midi Remotes with your input settings: Channel, Note and Type. These 
 
 ### Assign Midi Remotes to Executors
 In order to assign Midi Remotes to Executors you simply have to change their name to the desired Executor in this format: `<Prefix> Executor <ExecId> <Key/Fader>`, where `<Prefix>` can be any given prefix text, `<ExecId>` any Executor number and `<Key/Fader>` needs to be set to either "Key" or "Fader", depending on whether you want the Midi Remote to have the Key or Fader action of the Executor.
-### Examples:
+#### Examples:
 `APC40 Fader 1 Executor 201 Fader`
 `Launchpad Mini Button 1 Executor 101 Key`
 
