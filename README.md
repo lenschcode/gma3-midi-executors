@@ -2,7 +2,7 @@
 ### Allows you to map Midi Remotes in MA3 to Executors
 
 ## Installation
-Download .zip from [Releases](https://github.com/lenschcode/MA3-Midi-Executors/releases/latest) or clone the repository into your `gma3_library/datapools/plugins/`folder. The name of the plugin folder needs to be `midi_executors` and all the files need to be in that folder.
+Download [.zip](https://github.com/lenschcode/MA3-Midi-Executors/releases/latest/download/midi_executors.zip) from [Releases](https://github.com/lenschcode/MA3-Midi-Executors/releases/latest) or clone the repository into your `gma3_library/datapools/plugins/`folder. The name of the plugin folder needs to be `midi_executors` and all the files need to be in that folder.
 Then in MA3 open up the plugin pool, edit an empty slot, then press "import" and select `midi_executors`. After Installation you can simply press the plugin and it will open up a startup prompt.
 
 ## Usage
