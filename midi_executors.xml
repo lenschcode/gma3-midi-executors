@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GMA3 DataVersion="1.9.7.0">
+    <UserPlugin Name="Midi Executors" Author="LenschCode" Version="0.1.0.0" Path="/midi_executors">
+        <ComponentLua Name="Main" Filename="midi_executors_main.lua"/>
+    </UserPlugin>
+</GMA3>
