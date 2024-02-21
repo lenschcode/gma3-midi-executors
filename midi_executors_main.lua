@@ -1,5 +1,5 @@
 -- ********************************************************
--- **************** Midi Executors v1.0.1 *****************
+-- **************** Midi Executors v1.1.0 *****************
 -- ******************** by LenschCode *********************
 -- ********************** GNU GPLv3 ***********************
 -- ********************************************************
@@ -36,14 +36,21 @@ local running = false
 
 local function checkExecutor(name)
     local exec = {}
-    exec.page = CurrentExecPage().no
-    exec.id, exec.type = name:match("Executor (%d+) (%a+)")
-
+    
+    exec.page, exec.id, exec.type = name:match("Executor (%d+)-(%d+) (%a+)")
     if exec.page and exec.id and exec.type == "Key" or exec.type == "Fader" then
         return exec
     else
-        return nil
+        exec.page = CurrentExecPage().no
+        exec.id, exec.type = name:match("Executor (%d+) (%a+)")
+
+        if exec.page and exec.id and exec.type == "Key" or exec.type == "Fader" then
+            return exec
+        else
+            return nil
+        end
     end
+
 end
 
 local function getExecKey(page, id)
@@ -151,7 +158,6 @@ function main()
     elseif name == "Run Once" then
         parseMidiRemotes()
     end
-
 end
 
 return main

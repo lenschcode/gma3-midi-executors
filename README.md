@@ -1,4 +1,4 @@
-# MA3 Midi Executors
+# GrandMA3 Midi Executors
 ### Allows you to map Midi Remotes in MA3 to Executors
 
 ## Installation
@@ -15,15 +15,17 @@ Once the plugin is running pressing it again will open up a menu with the option
 Create the Midi Remotes with your input settings: Channel, Note and Type. These configurations will not be changed by the plugin.
 
 ### Assign Midi Remotes to Executors
-In order to assign Midi Remotes to Executors you simply have to change their name to the desired Executor in this format: `<Prefix> Executor <ExecId> <Key/Fader>`, where `<Prefix>` can be any given prefix text, `<ExecId>` any Executor number and `<Key/Fader>` needs to be set to either "Key" or "Fader", depending on whether you want the Midi Remote to have the Key or Fader action of the Executor.
+In order to assign Midi Remotes to Executors you simply have to change their name to the desired Executor in this format: `(<Prefix>) Executor (<Page>-)<ExecId> <Key/Fader>`, where `<Prefix>`  can be any given prefix text, `(<Page>-)` is optional for having it mapped to a specific page, `<ExecId>` any Executor number and `<Key/Fader>` needs to be set to either "Key" or "Fader", depending on whether you want the Midi Remote to have the Key or Fader action of the Executor.
 #### Examples:
 `APC40 Fader 1 Executor 201 Fader`
 `Launchpad Mini Button 1 Executor 101 Key`
+`Ableton Push Pad 1 Executor 8-101 Key`
 
 ### Refreshrate
 If you want to change the refresh rate of the plugin checking the executor assignment you can change `local rate = 0.5` in the top of the plugin to any number in seconds, although 0.5 is recommended for almost instant updating.
 
 ## Notes
-- All Midi remotes are currently assigned to the active page
+- All Midi remotes without a page are assigned to the active page
+- The notation for page specific executors has to be `10-101`, because `.` are not allowed in the name
 - All other options for the Midi Remotes won't be changed by the plugin
 - Locking the Midi Remotes will prevent the plugin from changing it's assignment
