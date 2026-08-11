@@ -1,0 +1,9 @@
+# OS
+.DS_Store
+
+# MA3-generated per-plugin cache (not source)
+libcache.dat
+libcache.dat2.dat
+
+# luac's default output file
+luac.out
